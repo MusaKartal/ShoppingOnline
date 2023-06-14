@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img class="img-fluid" [src]="'assets/'+ product.imageURL" [alt]="product.name">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ product.name }}</h2>
+      <h4>{{ product.categoryName }}</h4>
+      <p>{{ product.description }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <p>Available Quantity: {{ product.qty }}</p>
+
+      <form #cartAddForm="ngForm" (ngSubmit)="sendPostRequest(cartAddForm)">
+        <div class="col-md-6">
+          <input type="number" placeholder="Miktar" min="1"  #name="ngModel" [(ngModel)]="model.Qty" name="qty"  class="form-control">
+          <button type="submit" class="btn btn-primary">Sepete ekle</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>  

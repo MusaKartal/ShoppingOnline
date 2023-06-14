@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="mt-5">Ödeme Bilgileri</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div id="scriptContainer"></div>
+        <button (click)="sendPostRequest()">Tıkla</button>
+       <div>
+        
+        <div id="iyzipay-checkout-form" class="responsive"></div>
+
+       </div>
+        
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Ödeme Özeti</h2>
+            <p><strong>ürünler:</strong></p>
+            <div *ngFor="let shoppingCart of shoppingCarts">
+              <p>{{ shoppingCart.productName }} X {{ shoppingCart.qty }}</p>
+            </div>
+            <p><strong>Ödeme Tutarı :</strong>{{ calculateTotalPrice() }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

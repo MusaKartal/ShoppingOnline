@@ -1,0 +1,8 @@
+
+<div *ngFor="let catogery of catogeries">   
+<ul class="list-group">
+    <li class="list-group-item">
+      <a routerLink="product/category/{{catogery.id}}">{{catogery.name}}</a>   
+    </li>
+  </ul>
+</div>
